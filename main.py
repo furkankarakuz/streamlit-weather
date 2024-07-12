@@ -1,11 +1,10 @@
 import streamlit as st
 
 from city_list import city_list
-from config import API_KEY
 from requests_process import RequestsProcess
 
 # Request Process
-rq = RequestsProcess(API_KEY)
+rq = RequestsProcess(st.secrets["api_key"])
 df = rq.get_result(city_list[0])  # Default Select City
 
 
