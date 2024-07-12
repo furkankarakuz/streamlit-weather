@@ -62,6 +62,7 @@ class RequestsProcess():
             all_value_list.append(parsed_values)
 
         df = pd.DataFrame(all_value_list, columns=["Temperature", "Description", "Image", "Min", "Max", "Date"])
+        df["Date"] = pd.to_datetime(df["Date"], format="%Y-%m-%d %H:%M:%S")
 
         return df
 
