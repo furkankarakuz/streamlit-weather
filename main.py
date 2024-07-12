@@ -4,7 +4,7 @@ from city_list import city_list
 from requests_process import RequestsProcess
 
 # Request Process
-rq = RequestsProcess(st.secrets["api_key"])
+rq = RequestsProcess(st.secrets["API_KEY"])
 df = rq.get_result(city_list[0])  # Default Select City
 
 
