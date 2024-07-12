@@ -43,8 +43,8 @@ def display_weather_info(city_name):
         """
         Displays a line chart of the weather data over time.
         """
-        df_melt = df.melt(id_vars=["Date", "Image", "Description"], var_name="Category", value_name="Value").copy()
-        df_melt = df_melt.sort_values("Date")
+        df_melt = df.melt(id_vars=["Date", "Image", "Description"], var_name="Category", value_name="Value")
+        df_melt = df_melt.sort_values(["Date", "Category"])
         st.line_chart(df_melt, x="Date", y="Value", color="Category")
 
     st_table()
